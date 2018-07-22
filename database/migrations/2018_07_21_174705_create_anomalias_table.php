@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateAnomaliasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('anomalias', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('descripcionAnomalia');
+            $table->string('responsableReparacionAnomalia');
+            $table->string('evaluacionReparacionAnomalia');
+            $table->string('materialReparacionAnomalia');
+            $table->date('fechaReparacionAnomalia');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('anomalias');
+    }
+}
